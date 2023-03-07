@@ -1,7 +1,6 @@
 FROM grafana/grafana:latest
 
 USER root
-sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 RUN apk --update add wget tree jq sed su-exec
 
 RUN mkdir -p /etc/grafana/provisioning/dashboards/
