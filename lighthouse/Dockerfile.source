@@ -24,6 +24,8 @@ FROM debian:bullseye-slim
 # Unused, this is here to avoid build time complaints
 ARG DOCKER_TAG
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+
 RUN set -eux; \
         apt-get update; \
         apt-get install -y gosu; \
